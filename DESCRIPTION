@@ -1,0 +1,9 @@
+Package: BaysPostPred
+Title: Some useful functions for handling jags outputs
+Version: 0.0.0.9000
+Date: 2015-06-01
+Author: Simon Kapitza <simon.kapitza@uranus.uni-freiburg.de
+Description: Three functions that help to extract and plot Markov chains of specific parameters at specific node, plot pointssterior distributions against observed values and compute Bayesian p-values.
+Depends: R (>= 3.0.2), coda
+License: not available
+LazyData: true
