@@ -87,7 +87,7 @@ fitplot <- function(jags.object,obs, fits = NULL, store.plot = F, path = NULL, f
   plot(0, 0, type='n', bty='n', xaxt='n', yaxt='n')
   legend("top", legend = c("95% CI", "Mean", "1:1-line"), 
          lty = c(2,1,1), 
-         col = c("red", "red", "grey"), 
+         col = c("black", "black", "red"), 
          horiz = T)
   if(store.plot==T){
     graphics.off()

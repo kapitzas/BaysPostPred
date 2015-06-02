@@ -136,6 +136,7 @@ bpvalue <- function(jags.object, obs, sim.obs, fits = NULL, sim.fits = NULL, plo
       }
       if (store.output == T){
         graphics.off()
+        message(paste("Output stored in", output.path))
       }
       #compute bayesian p-value from ssq
       ssq.pvalue <- length(which(ssq.sim-ssq.fit >= 0))/length(ssq.fit)
