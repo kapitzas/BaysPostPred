@@ -14,7 +14,7 @@ parnode(jags.object, parameter, node = NULL, plots = T, store.output = F,
 
 \item{node}{optional. If \code{parameter} was monitored at \code{node}-level, \code{node} must be specified.}
 
-\item{plots}{Should density- and traceplots of \code{parameter} at \code{node} be created?}
+\item{plots}{optional. Should density- and traceplots of \code{parameter} at \code{node} be created?}
 
 \item{store.output}{optional. Should plots be stored?}
 

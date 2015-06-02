@@ -2,7 +2,7 @@
 % Please edit documentation in R/bpvalue.R
 \name{bpvalue}
 \alias{bpvalue}
-\title{Compute Baysian p-value using the response variables' posterior distribution, or  test statistic.}
+\title{Compute Bayesian p-value using the response variables' posterior distribution, or sums of squares.}
 \usage{
 bpvalue(jags.object, obs, sim.obs, fits = NULL, sim.fits = NULL,
   plots = T, store.output = F, path = NULL, method = c("post", "ssq"))
@@ -12,29 +12,29 @@ bpvalue(jags.object, obs, sim.obs, fits = NULL, sim.fits = NULL,
 
 \item{obs}{Observations}
 
-\item{sim.obs}{Observations replicated by model simulation}
+\item{sim.obs}{Simulated observations}
 
 \item{fits}{optional. Model fits}
 
-\item{sim.fits}{optional. Model fits replicated by model simulation}
+\item{sim.fits}{optional. Simulated fits}
 
 \item{plots}{optional. Should plots be produced?}
 
 \item{store.output}{optional. Should plots be stored?}
 
-\item{method}{\code{method = "ssq"} or \code{method = "post"}. Used to compute Bayesian p-value. See details}
+\item{method}{\code{method = "ssq"} or \code{method = "post"}. Method used to compute Bayesian p-value. See details}
 }
 \value{
 Both methods return Bayesian p-values of model fit and optional plots. See details.
 }
 \description{
-Compute Baysian p-value using the response variables' posterior distribution, or  test statistic.
+Compute Bayesian p-value using the response variables' posterior distribution, or sums of squares.
 }
 \details{
-The function calculates Bayesian p-values in to alternative ways that can be specified via the parameter \code{method}.
+The function calculates Bayesian p-values in two alternative ways that can be specified via the parameter \code{method}.
 \itemize{
  \item{\code{method = "post"}} {produces a p-value as measure of model fit from observations and simulated observations, both for the entire model and at node level. The method checks whether the simulated observations produced by the model are distributed around the actually observed value in such a way that the observed value approximates the median of the simulated observations. The if this is the case, the returned p-value would be at around 0.5., indicating good model fit.}
- \item{\code{method = "ssq"}} {looks at the sums of squares (SSQ) of the residuals between the observed response variable and the fitted response variable and the SSQ of the residuals between their respective modelled replicates. The p-value is calculated as the proportion of SSQ of the replicates in all SSQ that are larger than the SSQ of actual observations and predictions (see Kéry and Schaub 2012).}
+ \item{\code{method = "ssq"}} {looks at the sums of squares (SSQ) of the residuals between observations and fits and the SSQ of the residuals between their respective simulations. The p-value is calculated as the proportion of simulation SSQ that are larger than the SSQ of actual observations and fits (see Kéry and Schaub 2012).}
 }
 }
 \examples{
