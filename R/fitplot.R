@@ -26,7 +26,7 @@ fitplot <- function(jags.object,obs, fits = NULL, store.plot = F, path = NULL, f
   #store initial options and parameters and restore on exit
   old_options <- options()
   old_par <- par(no.readonly = TRUE) 
-  on.exit(options(old_options), add = T)
+  on.exit(options(old_options))
   on.exit(par(old_par), add = T) 
   #suppress browser
   options(error = stop)
@@ -89,7 +89,6 @@ fitplot <- function(jags.object,obs, fits = NULL, store.plot = F, path = NULL, f
          lty = c(2,1,1), 
          col = c("black", "black", "red"), 
          horiz = T)
-  par(old_par)
   if(store.plot==T){
     graphics.off()
     #let user know, where their stuff was stored
