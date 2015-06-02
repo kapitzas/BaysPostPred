@@ -89,6 +89,7 @@ fitplot <- function(jags.object,obs, fits = NULL, store.plot = F, path = NULL, f
          lty = c(2,1,1), 
          col = c("black", "black", "red"), 
          horiz = T)
+  par(old_par)
   if(store.plot==T){
     graphics.off()
     #let user know, where their stuff was stored
