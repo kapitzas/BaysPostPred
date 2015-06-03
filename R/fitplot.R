@@ -85,7 +85,6 @@ fitplot <- function(jags.object,obs, fits = NULL, store.plot = F, path = NULL, f
   abline(0,1, lty = 1, col = "red")
   rug(x, ticksize = 0.03, side = 1, lwd = 0.5, col = par("fg"),
       quiet = getOption("warn") < 0)
-  
   par(fig=c(0, 1, 0, 1), oma=c(0, 0, 1, 0), mar=c(0, 0, 0, 0), new=TRUE)
   plot(0, 0, type='n', bty='n', xaxt='n', yaxt='n')
   legend("top", legend = c("95% CI", "Mean", "1:1-line"), 
